@@ -70,6 +70,7 @@ def run_command(command: str):
         command, shell=True, capture_output=True, text = True, timeout = 120
     )
     output = (result.stdout + result.stderr).strip()
+    print(f"\n [Command Result] {output}")
     return output or f"(no output, exit code {result.returncode})"
 
 LOCAL_TOOLS = {
